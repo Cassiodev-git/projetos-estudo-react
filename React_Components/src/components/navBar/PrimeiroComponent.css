@@ -1,0 +1,12 @@
+.teste {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.teste ul {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
