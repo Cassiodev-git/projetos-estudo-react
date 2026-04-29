@@ -19,9 +19,12 @@ function App() {
   }
   //escolha aleatoria da opção
   const randomOption = () =>{
-    if(options.length) return 
+    if(!options.length) return 
     const randomIndex = Math.floor(Math.random() * options.length)
     setSelect(options[randomIndex])
+  }
+  const handleDelete = (id: string) => {
+    setOption(options.filter(option => option.id !== id))
   }
   return (
     <div className="container">
@@ -31,7 +34,7 @@ function App() {
         <input type="text"  value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Digite uma opção..." />
         <button onClick={handleAdd}>Adicionar</button>
       </div>
-      <ListComponent options={options}/>
+      <ListComponent options={options} onRemove={handleDelete}/>
       <div className="card">
         <button className="decide" onClick={randomOption}>Decidir por mim 🎲</button>
         {select && <p>{select.name}</p>}
