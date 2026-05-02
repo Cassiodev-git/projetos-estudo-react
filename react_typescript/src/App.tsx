@@ -37,7 +37,7 @@ function App() {
       <ListComponent options={options} onRemove={handleDelete}/>
       <div className="card">
         <button className="decide" onClick={randomOption}>Decidir por mim 🎲</button>
-        {select && <p>{select.name}</p>}
+        {select && <p className="result">{select.name}</p> || <p className="result">Cadastre uma opção</p>}
       </div>
     </div>
   )
